@@ -1,7 +1,6 @@
 /* base */
 html {
   font-size: calc(1em + 0.33vw);
-  line-height: 1.3;
 }
 /*
 body {
@@ -54,4 +53,16 @@ blockquote {
 .paper {
   border: none;
   box-shadow: none;
+}
+
+nav {
+  padding: 0;
+}
+
+nav div {
+  margin: 0 0;
+}
+
+p {
+  line-height: 1.3;
 }
