@@ -1,11 +1,14 @@
-<h1>{{ .Title }}</h1>
-{{ range where .Pages.ByPublishDate.Reverse "Section" "post" }}
+<h1 class="post-title">{{ .Title }}</h1>
+{{- with $.Param "description" -}}{{- . -}}{{- end -}}
+{{ range where .Pages.ByPublishDate.Reverse "Section" "posts" }}
   <h2 class="post-list {{ if ne .Params.summary false }}summary{{ end }}">
     <a href="{{ .Permalink }}">
       {{ .Title }}
     </a>
   </h2>
-  {{ if ne .Params.summary false }}
+  {{ if eq .Params.summary true }}
     {{ .Summary }}
+  {{ else }}
+    {{ .Description }}
   {{ end }}
 {{ end }}
