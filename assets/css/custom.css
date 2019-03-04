@@ -54,6 +54,7 @@ blockquote {
 /* post single */
 .post-title {
   margin-bottom: 0.1em; 
+  line-height: 1.0;
 }
 
 /* toc */
