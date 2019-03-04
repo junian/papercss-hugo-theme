@@ -11,9 +11,24 @@ body {
 /* anchors */
 a,
 a:visited {
-  color: rgb(0, 0, 238);
-  background-image: none;
-  text-decoration: underline;
+  color: inherit;
+  outline: none;
+  -webkit-transition: all .2s ease-out;
+  -o-transition: all .2s ease-out;
+  transition: all .2s ease-out;
+  background: #c1c0bd;
+  background: -webkit-gradient(linear, left top, left bottom, from(#c1c0bd), to(#c1c0bd));
+  background: -webkit-linear-gradient(#c1c0bd, #c1c0bd);
+  background: -o-linear-gradient(#c1c0bd, #c1c0bd);
+  background: linear-gradient(#c1c0bd, #c1c0bd);
+  -webkit-background-size: 100% .15em;
+          background-size: 100% .15em;
+  background-repeat: no-repeat;
+  background-position: left 0 bottom 0;
+}
+
+a:focus {
+  background-color: #c1c0bd;
 }
 
 /* navbar */
