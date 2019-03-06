@@ -2,11 +2,10 @@
 html {
   font-size: calc(1em + 0.33vw);
 }
-/*
+
 body {
-  background-image: url('{{ "img/geometry2.png" | absURL }}');
+  background-color: #fef9f5;
 }
-*/
 
 /* anchors */
 a,
@@ -69,10 +68,12 @@ blockquote {
 .paper {
   border: none;
   box-shadow: none;
+  background-color: #fef9f5;
 }
 
 nav {
   padding: 0;
+  background-color: #fef9f5;
 }
 
 nav div {
@@ -85,4 +86,9 @@ article .text-lead {
 
 article .article-meta {
   margin-bottom: 35px;
+}
+
+table.article-list tbody tr td {
+  border-top: none;
+  line-height: inherit;
 }

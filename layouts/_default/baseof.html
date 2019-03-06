@@ -3,10 +3,11 @@
   {{ partial "head.html" . }}
   <body>
     <div class="container paper">
-      {{ partial "nav.html" . }}
       <main>
         {{ block "main" . }}{{ end }}
       </main>
+      {{/* partial "nav.html" . */}}
+      <h4 class="text-center"><a href="/">{{- if .Site.Params.brand -}}{{- .Site.Params.brand | safeHTML -}}{{- else -}}{{- .Site.Title -}}{{- end -}}</a></h4>
       {{ partial "google-analytics-async.html" . }}
   </div>
   </body>

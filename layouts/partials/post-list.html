@@ -1,14 +1,35 @@
-<h1 class="post-title">{{ .Title }}</h1>
-{{- with $.Param "description" -}}{{- . -}}{{- end -}}
-{{ range where .Pages.ByPublishDate.Reverse "Section" "posts" }}
-  <h2 class="post-list {{ if ne .Params.summary false }}summary{{ end }}">
-    <a href="{{ .Permalink }}">
-      {{ .Title }}
-    </a>
-  </h2>
-  {{ if eq .Params.summary true }}
-    {{ .Summary }}
-  {{ else }}
-    {{ .Description }}
-  {{ end }}
-{{ end }}
+<article class="article">
+<h1 class="post-title text-center">{{ .Title }}</h1>
+{{- with $.Param "description" -}}<p class="text-lead text-center">{{- . -}}</p>{{- end -}}
+<table class="article-list">
+  <tbody>
+    {{ range (.Pages).GroupByDate "2006" }}
+    <tr>
+      <td></td>
+      <td></td>
+    </tr>
+    <tr>
+      <td class="text-center">{{ .Key }}</td>
+      <td></td>
+    </tr>
+      {{ range (.Pages).GroupByDate "January" }}
+      <tr>
+        <td class="text-center">{{ .Key }}</td>
+        <td></td>
+      </tr>
+        {{ range where .Pages.ByPublishDate.Reverse "Section" "posts" }}
+        <tr>
+          <td class="text-center">{{ .Date.Format "02" }}</td>
+          <td><a href="{{ .Permalink }}">{{- .Title -}}</a></td>
+        </tr>
+        {{ end }}
+      {{ end }}
+    {{ end }}
+    <tr>
+      <td></td>
+      <td></td>
+    </tr>
+  </tbody>
+</table>
+<hr />
+</article>
